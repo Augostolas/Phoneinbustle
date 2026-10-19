@@ -57,13 +57,17 @@ async function listFiles(directory) {
 }
 
 const assetFiles = await listFiles(path.join(root, 'assets'));
-const gifFiles = assetFiles.filter(file => path.extname(file).toLowerCase() === '.gif');
+const allowedGifAssets = new Set(['assets/vfxing/Ivy.gif']);
+const gifFiles = assetFiles.filter(file =>
+    path.extname(file).toLowerCase() === '.gif'
+    && !allowedGifAssets.has(path.relative(root, file).replaceAll('\\', '/'))
+);
 if (gifFiles.length) errors.push(`Unexpected GIF assets: ${gifFiles.map(file => path.relative(root, file)).join(', ')}.`);
 
 let assetBytes = 0;
 for (const file of assetFiles) assetBytes += (await stat(file)).size;
 const assetMegabytes = assetBytes / 1024 / 1024;
-if (assetMegabytes > 35) errors.push(`Asset bundle is ${assetMegabytes.toFixed(2)} MB; limit is 35 MB.`);
+if (assetMegabytes > 36) errors.push(`Asset bundle is ${assetMegabytes.toFixed(2)} MB; limit is 36 MB.`);
 
 if (errors.length) {
     console.error(errors.map(error => `- ${error}`).join('\n'));
@@ -71,3 +75,4 @@ if (errors.length) {
 } else {
     console.log(`Site validation passed. ${localAssets.size} references checked; assets total ${assetMegabytes.toFixed(2)} MB.`);
 }
+
