@@ -313,6 +313,11 @@ body.geedorah-mode .crt-overlay {
     background: #020402;
 }
 
+.preview-card img.preview-image--portrait {
+    aspect-ratio: 3 / 4;
+    object-fit: contain;
+}
+
 .preview-name {
     color: var(--term-green-bright);
     overflow-wrap: anywhere;
@@ -782,3 +787,4 @@ body.geedorah-mode.matrix-unlocked .cli-input-area {
         display: none;
     }
 }
+

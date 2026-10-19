@@ -126,6 +126,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 {
                     name: '002',
                     preview: 'assets/vfxing/golden-aura.webp'
+                },
+                {
+                    name: '003',
+                    preview: 'assets/vfxing/Ivy.gif',
+                    previewMode: 'portrait'
                 }
             ]
         }
@@ -238,7 +243,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         return `
             <a class="preview-card" href="${escapeHTML(artifact.preview)}" target="_blank" rel="noopener">
-                <img src="${escapeHTML(artifact.preview)}" alt="${escapeHTML(artifact.name)}" loading="lazy" decoding="async">
+                <img class="${artifact.previewMode === 'portrait' ? 'preview-image--portrait' : ''}" src="${escapeHTML(artifact.preview)}" alt="${escapeHTML(artifact.name)}" loading="lazy" decoding="async">
                 ${artifact.hideLabel ? '' : `<span class="preview-name">${escapeHTML(artifact.name)}</span>`}
                 ${artifact.description ? `<span class="preview-desc">${escapeHTML(artifact.description)}</span>` : ''}
             </a>`;
@@ -720,3 +725,4 @@ ${renderTabs('prices')}
     cliInput.focus();
     runStartupSequence();
 });
+
