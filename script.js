@@ -88,6 +88,16 @@ document.addEventListener('DOMContentLoaded', () => {
                     name: '008',
                     description: '',
                     preview: 'assets/building/academy-facade.png'
+                },
+                {
+                    name: '009',
+                    description: '',
+                    preview: 'assets/building/blue-office-lobby.png'
+                },
+                {
+                    name: '010',
+                    description: '',
+                    preview: 'assets/building/blue-office-corridor.png'
                 }
             ]
         },
