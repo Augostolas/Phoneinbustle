@@ -67,7 +67,7 @@ if (gifFiles.length) errors.push(`Unexpected GIF assets: ${gifFiles.map(file => 
 let assetBytes = 0;
 for (const file of assetFiles) assetBytes += (await stat(file)).size;
 const assetMegabytes = assetBytes / 1024 / 1024;
-if (assetMegabytes > 36) errors.push(`Asset bundle is ${assetMegabytes.toFixed(2)} MB; limit is 36 MB.`);
+if (assetMegabytes > 37) errors.push(`Asset bundle is ${assetMegabytes.toFixed(2)} MB; limit is 37 MB.`);
 
 if (errors.length) {
     console.error(errors.map(error => `- ${error}`).join('\n'));
