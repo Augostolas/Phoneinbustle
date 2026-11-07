@@ -103,6 +103,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     name: '011',
                     description: '',
                     preview: 'assets/building/outdoor-city-showcase.gif'
+                },
+                {
+                    name: '012',
+                    description: '',
+                    preview: 'assets/building/autumn-camp-showcase.gif'
                 }
             ]
         },
