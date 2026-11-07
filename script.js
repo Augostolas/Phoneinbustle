@@ -98,6 +98,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     name: '010',
                     description: '',
                     preview: 'assets/building/blue-office-corridor.png'
+                },
+                {
+                    name: '011',
+                    description: '',
+                    preview: 'assets/building/outdoor-city-showcase.gif'
                 }
             ]
         },

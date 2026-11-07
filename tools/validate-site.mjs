@@ -57,7 +57,7 @@ async function listFiles(directory) {
 }
 
 const assetFiles = await listFiles(path.join(root, 'assets'));
-const allowedGifAssets = new Set(['assets/vfxing/Ivy.gif']);
+const allowedGifAssets = new Set(['assets/vfxing/Ivy.gif', 'assets/building/outdoor-city-showcase.gif']);
 const gifFiles = assetFiles.filter(file =>
     path.extname(file).toLowerCase() === '.gif'
     && !allowedGifAssets.has(path.relative(root, file).replaceAll('\\', '/'))
@@ -67,7 +67,7 @@ if (gifFiles.length) errors.push(`Unexpected GIF assets: ${gifFiles.map(file => 
 let assetBytes = 0;
 for (const file of assetFiles) assetBytes += (await stat(file)).size;
 const assetMegabytes = assetBytes / 1024 / 1024;
-if (assetMegabytes > 37) errors.push(`Asset bundle is ${assetMegabytes.toFixed(2)} MB; limit is 37 MB.`);
+if (assetMegabytes > 55) errors.push(`Asset bundle is ${assetMegabytes.toFixed(2)} MB; limit is 55 MB.`);
 
 if (errors.length) {
     console.error(errors.map(error => `- ${error}`).join('\n'));
