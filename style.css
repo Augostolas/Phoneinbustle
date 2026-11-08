@@ -226,17 +226,26 @@ body.geedorah-mode .crt-overlay {
 
 .folder-row {
     display: grid;
-    grid-template-columns: 42px 1fr;
+    grid-template-columns: 42px minmax(0, 1fr) auto;
     align-items: center;
     width: 100%;
     margin-bottom: 6px;
 }
 
 .folder-row.animating-folder {
-    grid-template-columns: 42px max-content 26px 1fr;
+    grid-template-columns: 42px max-content 26px minmax(0, 1fr);
     color: #d0d0d0;
     border-color: #707070;
     background: linear-gradient(90deg, #393939, #171717);
+}
+
+.folder-experience {
+    justify-self: end;
+    padding-left: 12px;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    opacity: 0.72;
+    white-space: nowrap;
 }
 
 .folder-row.animating-folder:hover,

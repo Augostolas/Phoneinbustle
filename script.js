@@ -43,11 +43,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const folders = {
         animating: {
             title: 'Animating',
+            experience: 'None',
             emptyMessage: 'Coming soon — animation reels are being prepared.',
             files: []
         },
         building: {
             title: 'Building',
+            experience: '6–7 years',
             files: [
                 {
                     name: '001',
@@ -113,6 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         scripting: {
             title: 'Scripting',
+            experience: '4 years',
             files: [
                 {
                     name: 'Molotov',
@@ -138,6 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         vfxing: {
             title: 'VFXing',
+            experience: '2 years',
             files: [
                 {
                     name: '001',
@@ -275,6 +279,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span class="folder-icon theme-icon" aria-hidden="true"></span>
                 <span class="folder-title">${folder.title}</span>
                 ${key === 'animating' ? '<img class="animation-gear" src="assets/ui/animating-gear.png" alt="" aria-hidden="true">' : ''}
+                <span class="folder-experience">${folder.experience}</span>
             </button>
         `).join('');
 
